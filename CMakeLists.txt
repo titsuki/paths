@@ -31,6 +31,8 @@ SET(src
 SET(luasrc 
   "${CMAKE_CURRENT_SOURCE_DIR}/init.lua")
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+
 # When using MSVC
 IF(MSVC)
   # we want to respect the standard, and we are bored of those **** .
@@ -40,8 +42,7 @@ ENDIF(MSVC)
 ADD_LIBRARY("paths" MODULE ${src})
 SET_TARGET_PROPERTIES("paths" PROPERTIES
   PREFIX "lib"
-  IMPORT_PREFIX "lib"
-  POSITION_INDEPENDENT_CODE ON)
+  IMPORT_PREFIX "lib")
 
 IF(APPLE)
   SET_TARGET_PROPERTIES("paths" PROPERTIES
