@@ -31,7 +31,7 @@ SET(src
 SET(luasrc 
   "${CMAKE_CURRENT_SOURCE_DIR}/init.lua")
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 # When using MSVC
 IF(MSVC)
